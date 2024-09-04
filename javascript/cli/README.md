@@ -26,7 +26,7 @@ Replace `your-api-token` with your actual API token.
 
    ```bash
    git clone https://github.com/Collected-Notes/tools
-   cd tools/js/cli
+   cd tools/javascript/cli
    ```
 
 2. **Install Dependencies**
