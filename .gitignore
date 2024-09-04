@@ -1,0 +1,61 @@
+# Ignore common system files
+.DS_Store
+Thumbs.db
+
+# Ignore Go build artifacts
+/go/bin/
+/go/pkg/
+/go/bin/*
+/go/pkg/*
+**/*.exe
+**/*.exe~
+**/*.dll
+**/*.so
+**/*.dylib
+**/*.test
+*.out
+
+# Ignore JavaScript/Node.js files
+/javascript/node_modules/
+/javascript/dist/
+/javascript/.npm/
+/javascript/*.log
+/javascript/*.tmp
+/javascript/*.env
+/javascript/.env.local
+/javascript/.cache
+
+# Ignore Rust build artifacts
+/rust/target/
+/rust/Cargo.lock
+
+# Ignore Rust build artifacts from Cargo
+/target/
+/**/*.rs.bk
+
+# Ignore IDE and Editor configuration files
+.vscode/
+.idea/
+*.sublime-project
+*.sublime-workspace
+
+# Ignore backup and temporary files
+*.swp
+*.bak
+*~
+*.tmp
+
+# Ignore specific tool config files
+*.env
+*.log
+*.coverage
+*.pyc
+
+# Ignore OpenAPI generated files
+/openapi.yaml
+
+# Ignore MacOS system files
+._*
+.Spotlight-V100
+.Trashes
+*.swp
