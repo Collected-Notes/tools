@@ -20,16 +20,16 @@ This repo consists of the following projects:
    - See `/go/cli/README.md` for build instructions and usage details
    - Allows you to build a binary that can be used to interact with the API
 
-2. JavaScript/Node.js CLI (`/javascript/`)
+2. JavaScript/Node.js CLI (`/javascript/cli`)
    - Alternative CLI implementation in JavaScript
    - Offers additional features and flexibility
-   - Refer to `/javascript/README.md` for setup and usage information
+   - Refer to `/javascript/api/README.md` for setup and usage information
    - Easy integration with existing JavaScript projects.
 
-3. Rust CLI (`/rust/`)
+3. Rust CLI (`/rust/cli`)
    - High-performance CLI implementation in Rust
    - Provides efficient handling of API interactions
-   - Check `/rust/README.md` for compilation instructions and usage guide
+   - Check `/rust/cli/README.md` for compilation instructions and usage guide
    - Allows you to build a binary that can be used to interact with the API
 
 Each component has its own README file with specific instructions for building, installing, and using the respective CLI tool. Please refer to the individual README files for detailed information on each implementation.

@@ -1,10 +1,10 @@
-# Collected Notes CLI Tool (Go)
+# Collected Notes CLI Tool (Rust)
 
 The Collected Notes CLI Tool is a command-line interface for managing sites and notes using the Collected Notes API. It supports various operations such as listing, creating, updating, and deleting sites and notes, retrieving note content in different formats, and searching notes within a site.
 
 ## Prerequisites
 
-- Go (Golang) installed on your machine (version 1.16 or higher).
+- Rust installed on your machine (version 1.56 or higher).
 - An API token for Collected Notes. Save this token in a file named `.collected-notes` in your home directory. The token should be stored in plain text format. Obtain your API token from the [Collected Notes API page](https://collectednotes.com/api).
 
 ### Setting Up the API Key
@@ -25,18 +25,18 @@ Replace `your-api-token` with your actual API token.
 
    ```bash
    git clone https://github.com/Collected-Notes/tools
-   cd tools/go/cli
+   cd tools/rust/cli
    ```
 
 2. **Build the Tool**
 
-   Compile the Go code to create an executable:
+   Compile the Rust code to create an executable:
 
    ```bash
-   go build -o collected-notes-cli
+   cargo build --release
    ```
 
-   This command will generate an executable named `collected-notes-cli` in your current directory.
+   This command will generate an executable in the `target/release` directory.
 
 ## Command Line Tool Usage
 
@@ -47,13 +47,13 @@ Run the tool using the following commands:
 - **Get all sites:**
 
   ```bash
-  ./collected-notes-cli get-sites
+  ./target/release/collected-notes-cli get-sites
   ```
 
 - **Get a specific site by path:**
 
   ```bash
-  ./collected-notes-cli get-site <site_path>
+  ./target/release/collected-notes-cli get-site <site_path>
   ```
 
   Replace `<site_path>` with the path of the site you want to retrieve.
@@ -61,7 +61,7 @@ Run the tool using the following commands:
 - **Create a new site:**
 
   ```bash
-  ./collected-notes-cli create-site <site_path> <name>
+  ./target/release/collected-notes-cli create-site <site_path> <name>
   ```
 
   Replace `<site_path>` with the desired path and `<name>` with the name of the new site.
@@ -69,15 +69,15 @@ Run the tool using the following commands:
 - **Update a site:**
 
   ```bash
-  ./collected-notes-cli update-site <site_path> <name> [headline] [about] [domain]
+  ./target/release/collected-notes-cli update-site <site_path> <name>
   ```
 
-  Replace `<site_path>`, `<name>`, and optionally `[headline]`, `[about]`, `[domain]` with the updated information.
+  Replace `<site_path>` and `<name>` with the updated information.
 
 - **Delete a site:**
 
   ```bash
-  ./collected-notes-cli delete-site <site_path>
+  ./target/release/collected-notes-cli delete-site <site_path>
   ```
 
   Replace `<site_path>` with the path of the site to delete.
@@ -87,13 +87,13 @@ Run the tool using the following commands:
 - **Get all notes for a site:**
 
   ```bash
-  ./collected-notes-cli get-notes <site_path>
+  ./target/release/collected-notes-cli get-notes <site_path>
   ```
 
 - **Create a new note for a site:**
 
   ```bash
-  ./collected-notes-cli create-note <site_path> <body> <visibility>
+  ./target/release/collected-notes-cli create-note <site_path> <body> <visibility>
   ```
 
   Replace `<site_path>`, `<body>`, and `<visibility>` with the site path, note body, and visibility status (`public` or `private`).
@@ -101,19 +101,19 @@ Run the tool using the following commands:
 - **Get a specific note by path:**
 
   ```bash
-  ./collected-notes-cli get-note <site_path> <note_path>
+  ./target/release/collected-notes-cli get-note <site_path> <note_path>
   ```
 
 - **Update a note:**
 
   ```bash
-  ./collected-notes-cli update-note <site_path> <note_path> <body> <visibility>
+  ./target/release/collected-notes-cli update-note <site_path> <note_path> <body> <visibility>
   ```
 
 - **Delete a note:**
 
   ```bash
-  ./collected-notes-cli delete-note <site_path> <note_path>
+  ./target/release/collected-notes-cli delete-note <site_path> <note_path>
   ```
 
 ### Additional Commands
@@ -121,31 +121,31 @@ Run the tool using the following commands:
 - **Get all links from a note:**
 
   ```bash
-  ./collected-notes-cli get-links-from-note <site_path> <note_path>
+  ./target/release/collected-notes-cli get-links-from-note <site_path> <note_path>
   ```
 
 - **Get the body of a note as HTML:**
 
   ```bash
-  ./collected-notes-cli get-note-body-as-html <site_path> <note_path>
+  ./target/release/collected-notes-cli get-note-body-as-html <site_path> <note_path>
   ```
 
 - **Get the note in Markdown format:**
 
   ```bash
-  ./collected-notes-cli get-note-as-markdown <site_path> <note_path>
+  ./target/release/collected-notes-cli get-note-as-markdown <site_path> <note_path>
   ```
 
 - **Get the note in plain text format:**
 
   ```bash
-  ./collected-notes-cli get-note-as-plaintext <site_path> <note_path>
+  ./target/release/collected-notes-cli get-note-as-plaintext <site_path> <note_path>
   ```
 
 - **Search notes within a site:**
 
   ```bash
-  ./collected-notes-cli search-notes <site_path> <term> [mode]
+  ./target/release/collected-notes-cli search-notes <site_path> <term> [mode]
   ```
 
   Replace `<site_path>`, `<term>`, and optionally `[mode]` with the site path, search term, and search mode (`exact` or `semantic`).

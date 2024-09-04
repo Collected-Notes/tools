@@ -1,47 +1,32 @@
-## Collected Notes CLI JavaScript Tool
+# Collected Notes CLI Tool (JavaScript)
 
-This command-line tool is built in TypeScript to interact with the Site Management API. It allows you to manage sites and notes, perform CRUD operations, search notes, and retrieve content in different formats.
-
-## Features
-
-- List all sites
-- Create, update, and delete sites
-- List, create, update, and delete notes for a site
-- Get note content in HTML, Markdown, or plain text format
-- Search notes within a site
-- Retrieve all links from a note
+The Collected Notes CLI JavaScript Tool is a command-line interface for managing sites and notes using the Collected Notes API. It supports various operations such as listing, creating, updating, and deleting sites and notes, retrieving note content in different formats, and searching notes within a site.
 
 ## Prerequisites
 
 - **Node.js** (version 14 or higher).
 - **npm** (Node Package Manager).
-- An API token saved in a file named `.collected-notes` in your home directory. The token should be stored in plain text format.
+- An API token for Collected Notes. Save this token in a file named `.collected-notes` in your home directory. The token should be stored in plain text format. Obtain your API token from the [Collected Notes API page](https://collectednotes.com/api).
 
-### Environment Setup
+### Setting Up the API Key
 
-1. **Install Node.js and npm**
+Ensure your API token is stored in `~/.collected-notes`:
 
-   To install Node.js, follow the instructions for your platform from the official [Node.js installation guide](https://nodejs.org/).
+```bash
+echo "your-api-token" > ~/.collected-notes
+```
 
-2. **Set up API Token**
+Replace `your-api-token` with your actual API token.
 
-   Ensure your API token is stored in `~/.collected-notes`:
-
-   ```bash
-   echo "your-api-token" > ~/.collected-notes
-   ```
-
-   Replace `your-api-token` with your actual API token.
-
-## Installation
+## Building
 
 1. **Clone the Repository**
 
    Clone this repository to your local machine:
 
    ```bash
-   git clone https://github.com/your-username/collected-notes-cli-js.git
-   cd collected-notes-cli-js
+   git clone https://github.com/Collected-Notes/tools
+   cd tools/js/cli
    ```
 
 2. **Install Dependencies**
@@ -62,7 +47,7 @@ This command-line tool is built in TypeScript to interact with the Site Manageme
 
    This command will generate compiled JavaScript files in the `dist` directory.
 
-## Usage
+## Command Line Tool Usage
 
 Run the tool using the following commands:
 
@@ -174,33 +159,8 @@ Run the tool using the following commands:
 
   Replace `<site_path>`, `<term>`, and optionally `[mode]` with the site path, search term, and search mode (`exact` or `semantic`).
 
-### Development Mode
-
-To run the tool in development mode using `localhost:3000` instead of the production server:
-
-```bash
-node dist/index.js --dev get-sites
-```
-
-## Error Handling
-
-If you encounter errors, ensure that:
-
-- Your API token is correctly stored in `~/.collected-notes`.
-- Your command syntax is correct.
-
-## Contributing
-
-Contributions are welcome! Please fork the repository and create a pull request with your changes.
-
 ## License
 
-This project is licensed under the MIT License.
+This project is licensed under the
 
-### Summary of Changes
-
-- **Changed the language** to TypeScript instead of Go.
-- **Updated prerequisites** to reflect the requirements for Node.js, npm, and TypeScript.
-- **Replaced Go commands** with appropriate `node` commands to run the TypeScript tool.
-- **Included instructions for development mode** using the `--dev` flag.
-- **Adjusted build instructions** for installing dependencies and compiling TypeScript code.
+ MIT License.
